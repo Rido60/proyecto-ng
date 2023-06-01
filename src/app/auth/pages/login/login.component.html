@@ -1,0 +1,37 @@
+<div class="surface-0 bg-aqua flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div class="surface-card p-4 shadow-2 border-round w-full lg:w-4">
+    <div class="text-center mb-5">
+      <img src="assets/images/hyper.svg" alt="Image" height="50" class="mb-2 mt-3 cursor-pointer">
+      <div class="text-800 text-xl font-medium mb-2">Bienvenido a <a class="cursor-pointer no-underline text-blue-500">Docs.</a></div>
+      <span class="text-sm line-height-2">¿No tienes una cuenta?</span>
+      <a class="text-sm no-underline ml-2 text-blue-500 cursor-pointer">Crea una cuenta</a>
+    </div>
+
+    <div [formGroup]="formUser">
+      <label for="email" class="block text-sm font-medium mb-2">Correo electronico</label>
+      <input pInputText id="email" type="text" class="w-full" p-inputtext-sm autofocus formControlName="correo"/>
+      <small class="p-error block mb-3" *ngIf="hasValidControl('correo')">Correo no valido y campo correo obligatorio</small>
+
+      <label for="password" class="block text-sm font-medium mt-3">Contraseña</label>
+      <input pInputText id="password" type="password" class="w-full" p-inputtext-sm formControlName="clave" />
+      <small class="p-error block" *ngIf="hasValidControl('clave')">Campo clave obligatorio</small>
+
+      <div class="flex align-items-center justify-content-between mt-3 mb-3">
+        <div class="flex align-items-center">
+          <input type="checkbox" id="rememberme1"/>
+          <label for="rememberme1" class="text-sm ml-1">Recordarme</label>
+        </div>
+
+        <a class="no-underline ml-2 text-sm text-blue-500 text-right cursor-pointer">¿Olvidaste tu contraseña?</a>
+      </div>
+      <div class="w-full flex align-items-center justify-content-center">
+        <button pButton class="mt-3"
+          icon="pi pi-user"
+          [disabled]= "formUser.invalid"
+          (click)="loginUser()">
+          Ingresar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

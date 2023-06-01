@@ -1,0 +1,14 @@
+###
+GET  https://publications.fly.dev/api/usuarios/validar-sesion
+Accept: application/json
+Content-Type: application/json
+{
+    "x-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsInJvbGUiOiJVU0VSX1JPTEUiLCJpYXQiOjE2ODU1Nzg5NzksImV4cCI6MTY4NTYwNzc3OX0.u20NZs_Pu8RSoM6u7skMGCpE9VX_N1w86u4sRW5OsYA"
+
+}
+
+
+### usuario por id
+GET  https://publications.fly.dev/api/usuarios/usuario/43
+Accept: application/json
+Content-Type: application/json
